@@ -1,0 +1,14 @@
+{
+  "name": "cart/tony",
+  "description": "cart container service",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "predis/predis": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
