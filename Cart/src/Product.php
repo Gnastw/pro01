@@ -5,10 +5,10 @@ class Product
 
     private $name;
     private $price;
-    protected $tva = 1.2;
+    protected $tva = 0.2;
 
 
-    public function __construct($name, $price)
+    public function __construct(string $name, float $price)
     {
         $this->setName($name);
         $this->setPrice($price);
@@ -41,9 +41,9 @@ class Product
     /**
      *
      */
-    public function getTTC():float
+    public function getTVA()
     {
-        return $this->price * $this->tva;
+        return $this->tva;
     }
 
     /**

@@ -21,6 +21,8 @@ class Cart
     {
         $quantity = $quantity;
 
+	$priceTTC = $product->getPrice() * $quantity * ($product->getTVA() + 1 );
+
         $this->storage->setValue($product->getName(), $product->getPrice() * $quantity );
 
         return $this; // retourne l'objet dans le script courant pour chaîner les méthodes
