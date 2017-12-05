@@ -21,7 +21,7 @@ class Cart
     {
         $quantity = $quantity;
 
-        $this->storage->setValue($product->getName(), (float) $product->getPrice() * $quantity );
+        $this->storage->setValue($product->getName(), $product->getPrice() * $quantity );
 
         return $this; // retourne l'objet dans le script courant pour chaîner les méthodes
     }
