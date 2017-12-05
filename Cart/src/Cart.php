@@ -19,11 +19,10 @@ class Cart
      */
     public function buy(Product $product, int $quantity)
     {
-        $quantity = $quantity;
 
 	$priceTTC = $product->getPrice() * $quantity * ($product->getTVA() + 1 );
 
-        $this->storage->setValue($product->getName(), $product->getPrice() * $quantity );
+        $this->storage->setValue($product->getName(), $priceTTC );
 
         return $this; // retourne l'objet dans le script courant pour chaîner les méthodes
     }
