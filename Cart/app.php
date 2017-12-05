@@ -26,7 +26,7 @@ echo "<p>total after reset : {$cart->total()}</p>";
 
 /**
  * DB MySQL
- */
+ 
 
 Connect::set([
     'dsn' => 'mysql:host=localhost;dbname=biocoop',
@@ -53,27 +53,4 @@ echo "<p>total after restore apple : {$cart->total()}</p>";
 
 $cart->reset();
 echo "<p>total after reset : {$cart->total()}</p>";
-
-/**
- * Redis
- */
-
-$cart = new Cart(new StorageRedis('biocoop'));
-
-echo "<pre>";
-echo print_r($cart);
-echo "</pre>";
-
-$cart->buy($apple, 10);
-$cart->buy($raspberry, 10);
-$cart->buy($strawberry, 10);
-//
-echo "<pre>";
-echo print_r($cart);
-echo "</pre>";
-echo "<p>total : {$cart->total()}</p>";
-$cart->restore($apple);
-echo "<p>total after restore apple : {$cart->total()}</p>";
-
-$cart->reset();
-echo "<p>total after reset : {$cart->total()}</p>";
+*/
